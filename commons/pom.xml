@@ -6,4 +6,34 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>commons</artifactId>
+  
+  
+  <dependencies>
+  	 <!--JAXB的API，一般引入spring,JPI相关的依赖，以后都有  -->    
+	    <dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		 </dependency>
+		 
+	 <!-- Jackson原本是用于java和JSON相互转换的，后来为了实现java和XML的转换，增加了Jackson-dataformat-xml -->
+		<!-- 如果要使用Jackson，那么就用这个转换器即可！ -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>		
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency> 
+		
+	 <!-- 加入Spring Data JPA的依赖，会自动下载Hibernate等相关的依赖文件，而且会自动完成配置 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+	 <!-- 用于访问Redis的自动配置 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		
+		
+  </dependencies>
 </project>
