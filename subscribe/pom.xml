@@ -10,10 +10,10 @@
   <dependencies>
   		
   		<dependency>
-  			<groupId>${project.groupId}</groupId>
-  			<artifactId>commons</artifactId>
-  			<version>${project.version}</version>
-  		</dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>commons</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	
 	    <!-- JAXB的API，一般引入Spring、JPA相关的依赖以后，往往都会有 -->
 		<dependency>
@@ -59,12 +59,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency> -->
 		
-		
+		<!--  
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
-		
+		 -->
 		
 		<!-- MySQL的数据库驱动 -->
 		<dependency>
