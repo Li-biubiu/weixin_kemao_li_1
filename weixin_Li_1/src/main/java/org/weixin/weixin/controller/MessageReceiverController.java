@@ -4,7 +4,6 @@ import java.io.StringReader;
 
 import javax.xml.bind.JAXB;
 
-import org.li.commons.domain.InMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.weixin.commons.domain.InMessage;
 import org.weixin.weixin.service.MessageTypeMapper;
 
 //控制器: 负责接收用户的请求参数、调用业务层逻辑代码、返回视图/结果给客服端（浏览器）

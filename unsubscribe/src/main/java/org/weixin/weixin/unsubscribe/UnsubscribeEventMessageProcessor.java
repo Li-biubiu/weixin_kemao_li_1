@@ -4,14 +4,14 @@ import java.util.Date;
 
 import javax.transaction.Transactional;
 
-import org.li.commons.domain.User;
-import org.li.commons.domain.event.EventInMessage;
-import org.li.commons.processors.EventMessageProcessor;
-import org.li.commons.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.weixin.commons.domain.User;
+import org.weixin.commons.domain.event.EventInMessage;
+import org.weixin.commons.processors.EventMessageProcessor;
+import org.weixin.commons.repository.UserRepository;
 
 @Service("unsubscribeMessageProcessor")
 public class UnsubscribeEventMessageProcessor implements EventMessageProcessor {

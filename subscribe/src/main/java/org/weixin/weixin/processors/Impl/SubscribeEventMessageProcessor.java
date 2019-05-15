@@ -1,11 +1,11 @@
 package org.weixin.weixin.processors.Impl;
 
-import org.li.commons.domain.User;
-import org.li.commons.domain.event.EventInMessage;
-import org.li.commons.processors.EventMessageProcessor;
-import org.li.commons.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.weixin.commons.domain.User;
+import org.weixin.commons.domain.event.EventInMessage;
+import org.weixin.commons.processors.EventMessageProcessor;
+import org.weixin.commons.repository.UserRepository;
 import org.weixin.weixin.service.WeixinProxy;
 
 @Service("subscribeMessageProcessor")

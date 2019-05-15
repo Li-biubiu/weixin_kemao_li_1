@@ -3,15 +3,15 @@ package org.weixin.weixin.service;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.li.commons.domain.InMessage;
-import org.li.commons.domain.event.EventInMessage;
-import org.li.commons.domain.image.ImageInMessage;
-import org.li.commons.domain.link.LinkInMessage;
-import org.li.commons.domain.location.LocationInMessage;
-import org.li.commons.domain.shortvideo.ShortVideoInMessage;
-import org.li.commons.domain.text.TextInMessage;
-import org.li.commons.domain.video.VideoInMessage;
-import org.li.commons.domain.voice.VoiceInMessage;
+import org.weixin.commons.domain.InMessage;
+import org.weixin.commons.domain.event.EventInMessage;
+import org.weixin.commons.domain.image.ImageInMessage;
+import org.weixin.commons.domain.link.LinkInMessage;
+import org.weixin.commons.domain.location.LocationInMessage;
+import org.weixin.commons.domain.shortvideo.ShortVideoInMessage;
+import org.weixin.commons.domain.text.TextInMessage;
+import org.weixin.commons.domain.video.VideoInMessage;
+import org.weixin.commons.domain.voice.VoiceInMessage;
 
 public class MessageTypeMapper {
 	

@@ -8,13 +8,13 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.nio.charset.Charset;
 
-import org.li.commons.domain.ResponseError;
-import org.li.commons.domain.ResponseMessage;
-import org.li.commons.domain.ResponseToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.weixin.commons.domain.ResponseError;
+import org.weixin.commons.domain.ResponseMessage;
+import org.weixin.commons.domain.ResponseToken;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

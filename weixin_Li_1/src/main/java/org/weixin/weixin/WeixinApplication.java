@@ -1,13 +1,13 @@
 package org.weixin.weixin;
 
-import org.li.commons.domain.InMessage;
-import org.li.commons.service.JsonRedisSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.weixin.commons.domain.InMessage;
+import org.weixin.commons.service.JsonRedisSerializer;
 
 @SpringBootApplication
 public class WeixinApplication {
