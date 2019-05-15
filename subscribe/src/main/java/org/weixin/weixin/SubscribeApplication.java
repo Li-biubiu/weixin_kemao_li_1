@@ -21,9 +21,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@ComponentScan("org.li")
-@EnableJpaRepositories("org.li")
-@EntityScan("org.li")
+@ComponentScan("org.weixin")
+@EnableJpaRepositories("org.weixin")
+@EntityScan("org.weixin")
 													
 public class SubscribeApplication implements  EventListenerConfig  , ApplicationContextAware
 		// 表示命令行执行的抽象，要求实现一个run方法，在run方法里面启动一个线程等待停止通知

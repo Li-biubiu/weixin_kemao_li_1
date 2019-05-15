@@ -20,7 +20,6 @@ public class UnsubscribeEventMessageProcessor implements EventMessageProcessor {
 	@Autowired
 	private UserRepository userRepository;
 	
-	
 	@Override
 	@Transactional
 	public void onMessage(EventInMessage msg) {
