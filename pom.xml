@@ -28,5 +28,6 @@
 		<module>weixin_Li_1</module>
 		<module>subscribe</module>
 		<module>commons</module>
+		<module>unsubscribe</module>
 	</modules>
 </project>

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.li.commons.config.EventListenerConfig;
 import org.li.commons.domain.InMessage;
 import org.li.commons.domain.event.EventInMessage;
 import org.li.commons.processors.EventMessageProcessor;
@@ -37,8 +38,8 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 @ComponentScan("org.li")
 @EnableJpaRepositories("org.li")
 @EntityScan("org.li")
-													// 实现启动       实现停止        实现接口
-public class SubscribeApplication implements CommandLineRunner ,  DisposableBean , ApplicationContextAware
+													
+public class SubscribeApplication implements  EventListenerConfig  , ApplicationContextAware
 		// 表示命令行执行的抽象，要求实现一个run方法，在run方法里面启动一个线程等待停止通知
 		// 当mvn spring-boot:stop命令执行以后，会发送一个停止的命令给spring容器。
 		// Spring容器在收到命令以后，会执行停止，于是在停止之前会调用DisposbleBean里面的方法
@@ -51,7 +52,7 @@ public class SubscribeApplication implements CommandLineRunner ,  DisposableBean
 		
 	}
 	
-	
+	/*
 	// 这是一个停止监听器，等待是否停止的通知
 	private final Object stopMonitor = new Object();
 	
@@ -77,8 +78,9 @@ public class SubscribeApplication implements CommandLineRunner ,  DisposableBean
 			stopMonitor.notify();
 		}
 	}
-	
+	*/
 
+	/*
 	// 相当于Spring的XML配置方式中的<bean>元素
 	@Bean
 	public RedisTemplate<String, InMessage> inMessageTemplate(//
@@ -141,6 +143,7 @@ public class SubscribeApplication implements CommandLineRunner ,  DisposableBean
 
 		return container;
 	}
+	*/
 
 	private static final Logger LOG = LoggerFactory.getLogger(SubscribeApplication.class);
 	public void handle(EventInMessage msg) {
