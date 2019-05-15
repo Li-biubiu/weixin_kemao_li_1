@@ -25,18 +25,18 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("org.li")
 @EntityScan("org.li")
 													// 实现启动       实现停止        实现接口
-public class UnSubscribeApplication implements EventListenerConfig  , ApplicationContextAware
+public class UnsubscribeApplication implements EventListenerConfig  , ApplicationContextAware
 		// 表示命令行执行的抽象，要求实现一个run方法，在run方法里面启动一个线程等待停止通知
 		// 当mvn spring-boot:stop命令执行以后，会发送一个停止的命令给spring容器。
 		// Spring容器在收到命令以后，会执行停止，于是在停止之前会调用DisposbleBean里面的方法
 		// 得到Spring的容器
 	{
 	private ApplicationContext application; // spring容器
+	private static final Logger LOG = LoggerFactory.getLogger(UnsubscribeApplication.class);
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		application = applicationContext;
 	}
-	private static final Logger LOG = LoggerFactory.getLogger(UnSubscribeApplication.class);
 
 
 	@Override
@@ -65,7 +65,7 @@ public class UnSubscribeApplication implements EventListenerConfig  , Applicatio
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		SpringApplication.run(UnSubscribeApplication.class, args);
+		SpringApplication.run(UnsubscribeApplication.class, args);
 //		System.out.println("Spring Boot应用启动成功");
 //		//  让程序进入等待、不要退出
 //		CountDownLatch countDownLatch = new CountDownLatch(1);

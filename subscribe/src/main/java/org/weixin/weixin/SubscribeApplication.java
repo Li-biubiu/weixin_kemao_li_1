@@ -1,22 +1,15 @@
 package org.weixin.weixin;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.li.commons.config.EventListenerConfig;
-import org.li.commons.domain.InMessage;
 import org.li.commons.domain.event.EventInMessage;
 import org.li.commons.processors.EventMessageProcessor;
-import org.li.commons.service.JsonRedisSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -25,13 +18,6 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.data.redis.connection.MessageListener;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.listener.ChannelTopic;
-import org.springframework.data.redis.listener.RedisMessageListenerContainer;
-import org.springframework.data.redis.listener.Topic;
-import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
 
 @SpringBootApplication
@@ -51,6 +37,9 @@ public class SubscribeApplication implements  EventListenerConfig  , Application
 		application = applicationContext;
 		
 	}
+	private static final Logger LOG = LoggerFactory.getLogger(SubscribeApplication.class);
+
+	
 	
 	/*
 	// 这是一个停止监听器，等待是否停止的通知
@@ -145,7 +134,6 @@ public class SubscribeApplication implements  EventListenerConfig  , Application
 	}
 	*/
 
-	private static final Logger LOG = LoggerFactory.getLogger(SubscribeApplication.class);
 	public void handle(EventInMessage msg) {
 		// 1.  当前类实现ApplicationContextAware接口，用于获取Spring容器
 		// 2.  把Event全部转换为小写，并且拼接上MessageProcessor作为ID

@@ -43,7 +43,6 @@ public class SubscribeEventMessageProcessor implements EventMessageProcessor {
 				return;
 			}
 			
-			
 			// 4.  存储到数据库
 			if (user != null) {
 				// 原来关注过
