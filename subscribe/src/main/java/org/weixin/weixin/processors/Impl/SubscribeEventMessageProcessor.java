@@ -1,5 +1,7 @@
 package org.weixin.weixin.processors.Impl;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.weixin.commons.domain.User;
@@ -41,6 +43,11 @@ public class SubscribeEventMessageProcessor implements EventMessageProcessor {
 			
 			if (weixinUser == null) {
 				return;
+			}
+			
+			if (user != null) {
+				user.setStatus(User.Status.IS_SUBSCRIBE);
+				user.setUnsubTime(new Date());
 			}
 			
 			// 4.  存储到数据库

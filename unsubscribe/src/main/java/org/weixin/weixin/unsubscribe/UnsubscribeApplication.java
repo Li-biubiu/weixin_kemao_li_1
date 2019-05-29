@@ -1,11 +1,8 @@
 package org.weixin.weixin.unsubscribe;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.BeansException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +15,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.weixin.commons.config.EventListenerConfig;
 import org.weixin.commons.domain.event.EventInMessage;
 import org.weixin.commons.processors.EventMessageProcessor;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
  
 
 @SpringBootApplication

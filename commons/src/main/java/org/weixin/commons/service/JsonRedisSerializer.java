@@ -8,7 +8,6 @@ import java.util.Arrays;
 
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
-import org.weixin.commons.domain.InMessage;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -53,7 +52,11 @@ public class JsonRedisSerializer extends Jackson2JsonRedisSerializer<Object> {
 
 		// 在反序列化的时候被调用的方法，负责把字节数组转换为InMessage
 		@Override
-		public InMessage deserialize(byte[] bytes) throws SerializationException {
+		public Object deserialize(byte[] bytes) throws SerializationException {
+			
+			if (bytes == null || bytes.length == 0) {
+				return null;
+			}
 			
 			ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
 			DataInputStream DataInputStream = new DataInputStream(byteArrayInputStream);
@@ -67,8 +70,7 @@ public class JsonRedisSerializer extends Jackson2JsonRedisSerializer<Object> {
 				// 把读取到的字节，转换为类名
 				String className = new String (classNameBytes, "UTF-8");
 				// 通过类名，加载类对象
-				@SuppressWarnings("unchecked")
-				Class<? extends InMessage> cla = (Class<? extends InMessage>) Class.forName(className);
+				Class<? > cla = (Class<? >) Class.forName(className);
 				
 				
 				// length + 4 : 表示类名的长度和int的长度，一个int占4个字节

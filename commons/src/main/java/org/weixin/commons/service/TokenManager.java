@@ -1,4 +1,4 @@
-package org.weixin.weixin.service;
+package org.weixin.commons.service;
 
 public interface TokenManager {
 	/*
