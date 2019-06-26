@@ -8,7 +8,7 @@ import org.weixin.commons.domain.User;
 import org.weixin.commons.domain.event.EventInMessage;
 import org.weixin.commons.processors.EventMessageProcessor;
 import org.weixin.commons.repository.UserRepository;
-import org.weixin.weixin.service.WeixinProxy;
+import org.weixin.commons.service.WeixinProxy;
 
 @Service("subscribeMessageProcessor")
 public class SubscribeEventMessageProcessor implements EventMessageProcessor {

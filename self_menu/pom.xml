@@ -5,7 +5,7 @@
     <artifactId>weixin_kemao_li_1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>subscribe</artifactId>
+  <artifactId>self_menu</artifactId>
   
   <dependencies>
   		
@@ -14,29 +14,11 @@
 			<artifactId>commons</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-	
-	    <!-- JAXB的API，一般引入Spring、JPA相关的依赖以后，往往都会有 -->
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-		</dependency>
-		<!-- JAXB的核心库 -->
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-core</artifactId>
-			<version>2.3.0.1</version>
-		</dependency>
-		<!-- JAXB的实现库 -->
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-			<version>2.3.2</version>
-		</dependency>
 		
-		<!-- Jackson原本是用于java和JSON相互转换的，后来为了实现java和XML的转换，增加了Jackson-dataformat-xml -->
+		<!-- Jackson原本是用于Java和JSON相互转换的，后来为了实现Java和XML的转换，增加了jackson-dataformat-xml -->
 		<!-- 如果要使用Jackson，那么就用这个转换器即可！ -->
 		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>		
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
 	
@@ -50,22 +32,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
-		
-		
-		
 		<!-- Spring MVC的自动配置 -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency> -->
-		
-		<!--  
-		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
-		 -->
-		
 		<!-- MySQL的数据库驱动 -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -95,6 +66,23 @@
 			<scope>runtime</scope>
 		</dependency>
 		
+		<!-- 加入Servlet API的依赖 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<!-- Tomcat自带的，不要打包 -->
+			<scope>provided</scope>
+		</dependency>
+		<!-- 激活完整版的Tomcat，支持JSP -->
+		<!-- 增加JSP支持 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<!-- 如果在Tomcat里面运行，那么是由Tomcat提供的 -->
+			<!-- 如果在mvn命令直接运行，该依赖也会加入类路径 -->
+			<scope>provided</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -113,7 +101,7 @@
 					<!-- 每个fork出来的进程都会需要一个JMX端口，不能重复 -->
 					<!-- 默认9001 -->
 					<!-- 建议:每个人使用一段的端口号，比如张三使用 9001-9099，李四使用 9100-9199 -->
-					<jmxPort>9110</jmxPort>
+					<jmxPort>9130</jmxPort>
 					
 				</configuration>
 			</plugin>
