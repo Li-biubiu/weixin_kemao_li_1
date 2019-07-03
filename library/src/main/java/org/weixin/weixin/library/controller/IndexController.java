@@ -20,7 +20,7 @@ public class IndexController {
 	public String index(
 			Model model,
 			// required表示必须的，如果为false则非必须的
-			@RequestParam(name = "keyword",required = false)String keyword,
+			@RequestParam(name = "key人类word",required = false)String keyword,
 			// 因为后面使用Srping Data操作数据库，它在分页的时候第一页从0开始。
 			@RequestParam(name = "pageNumber",defaultValue = "0")int pageNumber
 	) {
