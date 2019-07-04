@@ -99,9 +99,10 @@ public class TokenManagerImpl implements TokenManager {
 		//	这里现在暂时为了简化而不考虑缓存，后面会进行重构
 		
 		
-		String appID = "wx1ff74879fda4600d";
-//		String appID = "wx23c42176b40e3389";
-		String appSecret = "50fed2d7d4910e042a11e0b0012551bf";
+//		String appID = "wx1ff74879fda4600d";	// 测试号ID
+		String appID = "wx23c42176b40e3389";	// 开发者
+//		String appSecret = "50fed2d7d4910e042a11e0b0012551bf";	// 测试号appSecret
+		String appSecret = "742c2da1ccd0ea5342e5653818f1a665";	// 开发者appSecret
 		
 		String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential"
 				+ "&appid=" + appID
